@@ -10,8 +10,8 @@ namespace PizzaWebApp.Models
         public string Name { get; set; }
         [Required]
         public string Desc { get; set; }
-        //[Required]  after authentication process update dataBase
-        //public int Price { get; set; }
+        [Required]  //after authentication process update dataBase
+        public int Price { get; set; }
         [Required]
         public string Url { get; set; }
     }
