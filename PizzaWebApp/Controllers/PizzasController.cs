@@ -25,6 +25,32 @@ namespace PizzaWebApp.Controllers
             return View(await _context.Pizza.ToListAsync());
         }
 
+        // 1 search data 
+        //right click on SearchForm and make it RazorView
+        public async Task<IActionResult> SearchForm()
+        {
+            return View();
+        }
+        //2 show reult heere
+       /* public string SearchResult(string Name)
+        {
+            return Name; just show what it get
+        } */
+       // 3 return list  from name
+        public async Task<IActionResult> SearchResult(string Name)
+        {
+            // show index view  and Use Fileter Where(a=>a.Name.Contains(Name))
+            return View("Index",await _context.Pizza.Where(a=>a.Name.Contains(Name)).ToListAsync());
+        }
+        public async Task<IActionResult> PizzaList()
+        {
+            return View(await _context.Pizza.ToListAsync());
+        }
+
+
+
+
+
         // GET: Pizzas/Details/5
         public async Task<IActionResult> Details(int? id)
         {

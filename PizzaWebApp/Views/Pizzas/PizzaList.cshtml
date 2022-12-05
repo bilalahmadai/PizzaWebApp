@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Pizza Menu";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Menu</h1>
+
+</div>
+
+<div class="row">
+    @foreach (var pizza in Model)
+    {
+        <div class=" col-lg-3 col-md-4 col-sm">
+
+
+
+            <article class="card">
+                <img class="card__image  img-fluid" src="@pizza.Url" alt="@pizza.Url" />
+                <div class="card__data">
+                    <div class="card__info">
+                        <h2>@pizza.Name</h2>
+                        <p>@pizza.Desc</p>
+                         <h3 class="card__price">commining soon $</h3> 
+                       
+                    </div>
+
+                    <input class="card__qty" type="number" name="qty" placeholder="0" value="" />
+                    <button class="card__add">+</button>
+                </div>
+            </article>
+        </div>
+
+    }
+</div>

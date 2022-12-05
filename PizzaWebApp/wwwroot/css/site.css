@@ -69,3 +69,122 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+
+/* card desing ----------*/
+
+.card {
+    margin: 10% 5%;
+    position: relative;
+    max-width: 100%;
+    border: none;
+}
+
+
+.card__image {
+    border-radius: 100%;
+    position: absolute;
+    max-width: 100%;
+    left: -20%;
+    right: 0;
+    margin: 0 auto;
+    top: -3%;
+    z-index: 2;
+    transition: all 0.3s ease-out;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.card__data {
+    border-radius: 15px;
+    background-color: #ededed;
+    padding-top: 100%;
+    transition: all 0.3s ease-out 0.1s;
+}
+
+.card__info {
+    padding: 0 10px;
+    margin-bottom: 20%;
+}
+
+    .card__info h2 {
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+    .card__info p {
+        font-size: 14px;
+        line-height: 14px;
+        color: #a2a2a2;
+    }
+
+.card__action {
+    display: grid;
+    grid-template: 30px / 1fr 35px;
+}
+
+.card__price {
+    height: 30px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+}
+
+.card__qty {
+    overflow: hidden;
+    width: 60%;
+    height: 50px;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #222222;
+    border: none;
+    color: #fff;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in;
+}
+
+.card__add {
+    overflow: hidden;
+    width: 40%;
+    height: 50px;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #222222;
+    border: none;
+    color: #fff;
+    border-bottom-right-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in;
+}
+
+    .card__add:hover {
+        background-color: #8a0000;
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+
+    .card__add:active {
+        opacity: 1;
+        transform: scale(0.8);
+    }
+
+.card:hover .card__image {
+    max-width: 110%;
+    top: -10%;
+}
+
+.card:hover .card__data {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
