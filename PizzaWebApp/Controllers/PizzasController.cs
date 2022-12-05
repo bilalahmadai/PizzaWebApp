@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -70,6 +71,9 @@ namespace PizzaWebApp.Controllers
         }
 
         // GET: Pizzas/Create
+
+        // 4 handle create page just with authoerized user same for edit and delete 
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -80,6 +84,9 @@ namespace PizzaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+        //handle data from FORMs perform database entries
+        [Authorize]
         public async Task<IActionResult> Create([Bind("Id,Name,Desc,Url")] Pizza pizza)
         {
             if (ModelState.IsValid)
@@ -92,6 +99,7 @@ namespace PizzaWebApp.Controllers
         }
 
         // GET: Pizzas/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -112,6 +120,7 @@ namespace PizzaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Desc,Url")] Pizza pizza)
         {
             if (id != pizza.Id)
@@ -143,6 +152,7 @@ namespace PizzaWebApp.Controllers
         }
 
         // GET: Pizzas/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
