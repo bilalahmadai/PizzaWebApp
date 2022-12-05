@@ -14,5 +14,6 @@ namespace PizzaWebApp.Data
         {
         }
         public DbSet<PizzaWebApp.Models.Pizza> Pizza { get; set; }
+        public DbSet<PizzaWebApp.Models.Cheff> Cheff { get; set; }
     }
 }
