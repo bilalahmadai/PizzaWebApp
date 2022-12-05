@@ -121,7 +121,7 @@ namespace PizzaWebApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Desc,Url")] Pizza pizza)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Desc,Url,Price")] Pizza pizza)
         {
             if (id != pizza.Id)
             {
