@@ -30,6 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Url)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -45,6 +48,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Url)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
            
             <td>
                     @if (SignInManager.IsSignedIn(User))
