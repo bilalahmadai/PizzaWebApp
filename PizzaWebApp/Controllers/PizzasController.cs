@@ -87,7 +87,7 @@ namespace PizzaWebApp.Controllers
 
         //handle data from FORMs perform database entries
         [Authorize]
-        public async Task<IActionResult> Create([Bind("Id,Name,Desc,Url")] Pizza pizza)
+        public async Task<IActionResult> Create([Bind("Id,Name,Desc,Url,Price")] Pizza pizza)
         {
             if (ModelState.IsValid)
             {
