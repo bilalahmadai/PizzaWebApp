@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using PizzaWebApp.Models;
 
 namespace PizzaWebApp.Data
 {
@@ -12,5 +13,6 @@ namespace PizzaWebApp.Data
             : base(options)
         {
         }
+        public DbSet<PizzaWebApp.Models.Pizza> Pizza { get; set; }
     }
 }
