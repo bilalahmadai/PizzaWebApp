@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzaWebApp.Models
 {
@@ -14,6 +15,12 @@ namespace PizzaWebApp.Models
         public int Price { get; set; }
         [Required]
         public string Url { get; set; }
+
+
+        // get chef Pid here as Fid  notes--5.1
+        [ForeignKey("PizzaCheff")]
+        public int CheffFID { get; set; }
+        public virtual Cheff PizzaCheff { get; set; }
     }
 }
 
